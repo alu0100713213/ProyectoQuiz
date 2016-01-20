@@ -1,12 +1,2 @@
-<!DOCTYPE html>
-<head>
-	<link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
+<%= respuesta %><p>
 
-<body>
-	<h2>QuizGame</h2>
-	<%= respuesta %><p>
-	<a href="/quizes/question"> Intentelo otra vez </a>
-</body>
-
-</html>
