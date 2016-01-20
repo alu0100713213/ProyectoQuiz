@@ -1,1 +1,0 @@
-var AbstractQuiz = require('../models/abstract_quiz_model.js');
