@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<head>
-	<link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
-	<h2>QuizGame</h2>
-	<form method="get" action="/quizes/answer">
-		Pregunta: <%= pregunta %> <p>
-		<input type="text" name="respuesta" value="Responda aqui" />
-		<input type="submit" value="Enviar" />
-	</form>
-</body>
-
-</html>
+<br><br>
+<form method="get" action="/quizes/answer">
+	Pregunta: <%= pregunta %> <p>
+	<input type="text" name="respuesta" value="Responda aqui" />
+	<input type="submit" value="Enviar" />
+</form>
