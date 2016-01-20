@@ -10,8 +10,25 @@ function Quiz() {
       respuesta: function(x) {
         return (206).exec(x);
       }
-    }
+    },
 
+    { pregunta: '¿En que se especializa la cartografía?',
+      respuesta: function(x) {
+        return (/\s*mapas\s*$/i).exec(x);
+      }
+    },
+
+    { pregunta: 'El triangulo que tiene sus tres lados igualees ¿Como se llama?',
+      respuesta: function(x) {
+        return (/\s*equilatero\s*$/i).exec(x);
+      }
+    },
+ 
+    { pregunta: '¿Quién es el padre del psicoanalisis?',
+      respuesta: function(x) {
+        return (/\s*sigmund freud\s*$/i).exec(x);
+      }
+    }
 
   );
 

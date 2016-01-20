@@ -6,12 +6,23 @@ function Quiz() {
 
   this.q.push(
 
-    { pregunta: '¿Cuantos anillos ha ganado Michael Jordan?',
+    { pregunta: '¿Qué cantidad de huesos tiene en total el ser humano?',
       respuesta: function(x) {
-        return (/^\s*seis\s*$/i).exec(x);
+        return (206).exec(x);
+      }
+    },
+
+    { pregunta: '¿En que se especializa la cartografía?',
+      respuesta: function(x) {
+        return (/\s*mapas\s*$/i).exec(x);
+      }
+    },
+
+    { pregunta: 'El triangulo que tiene sus tres lados igualees ¿Como se llama?',
+      respuesta: function(x) {
+        return (/\s*equilatero\s*$/i).exec(x);
       }
     }
-
 
   );
 
