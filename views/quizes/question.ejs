@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <head>
 	<title><%= title %></title>
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -8,7 +7,11 @@
 
 <body>
 	<h2>QuizGame</h2>
-	<%= respuesta %><p>
-	<a href="/quizes/question"> Intentelo otra vez </a>
+	<form method="get" action="/quizes/answer">
+		Pregunta: <%= pregunta %> <p>
+		<input type="text" name="respuesta" value="Responda aqui" />
+		<input type="submit" value="Enviar" />
+	</form>
 </body>
+
 </html>
