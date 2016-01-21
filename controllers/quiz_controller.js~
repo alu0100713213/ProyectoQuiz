@@ -37,3 +37,9 @@ exports.index = function(req, res){
 	}).catch(function(error) {next(error);})
 };
 
+exports.new = function(req, res){
+	var quiz = models.Quiz.build(
+	{pregunta: 'Pregunta', respuesta: 'Respuesta'}
+	);
+	res.render('quizes/new', {quiz, quiz});
+};
