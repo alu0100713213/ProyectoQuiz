@@ -1,7 +1,4 @@
 <br><div id=descripcion>QuizGame es el nuevo juego educativo de preguntas y respuestas con el que podras aprender nuevas curiosidades
 <p>Juega, responde y crea tus nuevas preguntas y respuestas. Compartelo con todos los usuarios</p></div>
 
-<center><h2><a href="/quizes/question">¡Juega ya!</a></h2></center>
-
-
-
+<center><a href="/quizes/new"><button type="button">Crear Pregunta</button></center>
