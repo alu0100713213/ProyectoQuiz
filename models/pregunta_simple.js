@@ -31,5 +31,4 @@ SeleccionSimple.prototype.get_area = function(){
 	return this.area_;
 }
 
-
 module.exports = SeleccionSimple;

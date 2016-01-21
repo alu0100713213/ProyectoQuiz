@@ -33,5 +33,9 @@ SeleccionMultiple.prototype.get_pregunta = function(){
 	return this.pregunta_;
 }
 
+SeleccionSimple.prototype.get_area = function(){
+	return this.area_;
+}
+
 module.exports = SeleccionMultiple;
 

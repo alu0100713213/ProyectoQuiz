@@ -1,4 +1,5 @@
 var Pregunta = require('../models/pregunta.js');
+var EJS = require('ejs');
 
 function SeleccionMultiple(x,array){
 	Pregunta.call(this);
@@ -32,5 +33,8 @@ SeleccionMultiple.prototype.get_pregunta = function(){
 	return this.pregunta_;
 }
 
+SeleccionSimple.prototype.get_area = function(){
+	return this.area_;
+}
 module.exports = SeleccionMultiple;
 
