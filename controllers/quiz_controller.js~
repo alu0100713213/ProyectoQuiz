@@ -5,25 +5,20 @@ var current = quiz.randomQuestion();
 
 var models = require('../models/models.js');
 
-exports.question = function(req,res) {
-	models.Quiz.findAll().success(function(quiz){
-		res.render('quizes/question', { pregunta: quiz[0].pregunta})
-	})
-/**  current = quiz.randomQuestion();
-  current_new = quiz.getQuestion(current);
-  area = quiz.getArea(current);
-  res.render('quizes/question', {pregunta: current_new, area: area});*/
+exports.question = function(req, res) {
+  models.Quiz.findAll().success(function(quiz){
+     res.render('quizes/question', { pregunta: quiz[0].pregunta })
+  })
 };
 
 exports.answer = function(req, res) {
-	models.Quiz.findAll().success(function(quiz){
-		if(req.query.respuesta === quiz[0].respuesta){
-			res.render('quizes/answer', {respuesta = 'Correcto'});
-		}
-		else{
-			res.render('quizes/answer', {respuesta = 'Incorrecto'});
-		}
-		});
+  models.Quiz.findAll().success(function(quiz){
+    if (req.query.respuesta === quiz[0].respuesta){ 
+      res.render('quizes/answer', { respuesta = 'Correcto' });
+    } else {
+      res.render('quizes/answer', { respuesta = 'Incorrecto' });
+    }
+    });
 };
 
 /**
@@ -31,6 +26,7 @@ exports.answer = function(req, res) {
   if (current.respuesta(req.query.respuesta)) { c = 'Correcto'; }
   res.render('quizes/answer', {respuesta: c});
 };
+
 
 exports.questions = function(req,res) {
   var nPreg = quiz.numQuestions();
