@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
 			},
 			respuesta: {
 				type: DataTypes.STRING,
-				validate: { notEmpty: {msg: "Falta introducir la pregunta"}}
+				validate: { notEmpty: {msg: "Falta introducir la respuesta"}}
 			}	
 		});
 };
