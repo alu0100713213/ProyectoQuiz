@@ -20,7 +20,7 @@
       <nav class="main" id="n1" role="navigation">
 
         <h1><a href="/">Inicio</a></h1>
-        <h1><a href="/quizes">Preguntas</a></h1>
+        <h1><a href="/quizes/questions">Preguntas</a></h1>
 	<h1><a href="/quizes/question">Juega ya</a></h1>
       </nav>
       <section class="main" id="s1">
