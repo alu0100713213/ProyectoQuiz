@@ -7,6 +7,7 @@ function PreguntaCorta(x) {
 }
 
 PreguntaCorta.prototype = new Pregunta();
+
 PreguntaCorta.prototype.constructor = PreguntaCorta;
 
 PreguntaCorta.prototype.get_area = function(){
