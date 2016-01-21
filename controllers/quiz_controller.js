@@ -39,9 +39,8 @@ exports.index = function(req, res){
 
 exports.new = function(req, res){
 	var quiz = models.Quiz.build(
-	{pregunta: 'Pregunta', respuesta: 'Respuesta'}
-	);
-	res.render('quizes/new', {quiz, quiz});
+	{pregunta: 'Pregunta', respuesta: 'Respuesta'});
+	res.render('quizes/new', {quiz: quiz});
 };
 
 exports.create = function(req, res){
