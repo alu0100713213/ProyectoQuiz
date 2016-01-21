@@ -1,2 +1,0 @@
-<h3><%= respuesta %></h3>
-<a href="/quizes/question">Seguir jugando</a>

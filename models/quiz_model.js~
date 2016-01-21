@@ -21,7 +21,7 @@ function Quiz() {
       respuesta: new Respuesta(/\s*equilatero\s*$/i)
     },
  
-    { pregunta: new PreguntaLarga('¿Quién es el padre del psiconalisis'),
+    { pregunta: new PreguntaLarga('¿Quién es el padre del psiconalisis?'),
       respuesta: new Respuesta(/\s*sigmund freud\s*$/i)
     }
 
