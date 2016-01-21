@@ -13,7 +13,15 @@ exports.load = function(req, res, next, quizId) {
 };
 
 exports.show = function(req, res) {
-  res.render('quizes/show', { quiz: req.quiz });
+	models.Quiz.find(req.params.quizId).then(function(quiz){
+	res.render('quizes/show', {quiz: quiz});
+	})
+};
+
+exports.answer = function(req, res) {
+  var respuesta = 'Incorrecto';
+  if (req.query.respuesta === req.quiz.respuesta) respuesta = 'Correcto'; 
+  res.render('quizes/answer', { quiz: req.quiz, respuesta: respuesta })
 };
 
 exports.index = function(req, res) {
@@ -22,13 +30,4 @@ exports.index = function(req, res) {
   }).catch(function(error) { next(error); });
 };
 
-exports.author = function(req, res) {
-  res.render('author', {});
-};
-
-exports.answer = function(req, res) {
-  var respuesta = 'Incorrecto';
-  if (req.query.respuesta === req.quiz.respuesta) respuesta = 'Correcto'; 
-  res.render('quizes/answer', { quiz: req.quiz, respuesta: respuesta })
-};
 

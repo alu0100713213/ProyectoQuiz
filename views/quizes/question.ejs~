@@ -1,5 +1,0 @@
-<center><br><form action="/quizes/answer" method="get">
-  Pregunta: <%- pregunta %> <p>
-	<%- area %>
-    <input type="submit" value="Enviar" />
-</form></center>
