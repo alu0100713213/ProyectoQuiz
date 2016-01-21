@@ -21,11 +21,12 @@ function Quiz() {
       respuesta: new Respuesta(/\s*equilatero\s*$/i)
     },
  
-    { pregunta: new PreguntaLarga('El triangulo que tiene sus tres lados igualees ¿Como se llama?'),
+    { pregunta: new PreguntaLarga('¿Quién es el padre del psiconalisis'),
       respuesta: new Respuesta(/\s*sigmund freud\s*$/i)
     }
 
   );
+}
 
 Quiz.prototype = new AbstractQuiz();
 Quiz.prototype.constructor = Quiz;
