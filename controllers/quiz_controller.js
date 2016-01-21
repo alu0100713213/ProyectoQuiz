@@ -51,8 +51,9 @@ exports.create = function(req, res){
 	}
 	else{
 	quiz.save({fields: ['pregunta', 'respuesta']}).then(function(){
-		res.redirect('/quizes');});
+		res.redirect('/quizes')});
 	}
-	)};
+	}
+);
 };
 
