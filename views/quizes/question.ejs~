@@ -1,4 +1,6 @@
 <center><br><form action="/quizes/answer" method="get">
   Pregunta: <%- pregunta %> <p>
 	<%- area %>
+	<%- vista%>
+    <input type="submit" value="Enviar" />
 </form></center>

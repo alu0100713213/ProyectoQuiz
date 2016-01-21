@@ -2,8 +2,8 @@ var AbstractQuiz = require('../models/abstract_quiz_model.js');
 var Respuesta = require('../models/respuesta.js');
 var PreguntaLarga = require('../models/pregunta_larga.js');
 var PreguntaCorta = require('../models/pregunta_corta.js');
-var SeleccionSimple = require('../models/pregunta_simple.js');
-var SeleccionMultiple = require('../models/pregunta_multiple.js');
+var PreguntaSimple = require('../models/pregunta_simple.js');
+var PreguntaMultiple = require('../models/pregunta_multiple.js');
 
 function Quiz() {
 
@@ -27,7 +27,7 @@ function Quiz() {
       respuesta: new Respuesta(/\s*sigmund freud\s*$/i)
     }, 
 
-    { pregunta: new SeleccionSimple('¿Cual es el unico mamifero capaz de volar?', ['Murcielago','Zorro','Jirafa']),
+    { pregunta: new PreguntaSimple('¿Cual es el unico mamifero capaz de volar?', ['Murcielago','Zorro','Jirafa']),
       respuesta: new Respuesta('Murcielago')
     }
   );
