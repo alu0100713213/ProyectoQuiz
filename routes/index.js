@@ -6,7 +6,7 @@ var router = express.Router();
 var quizController = require('../controllers/quiz_controller');
 
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Quiz' });
+  res.render('index', { title: 'QuizGame' });
 });
 
 router.param('quizId', quizController.load);
