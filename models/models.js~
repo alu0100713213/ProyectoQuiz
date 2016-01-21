@@ -1,4 +1,7 @@
 var path = require('path');
+
+// postgress: postgres://databaseuser:password@host:port/database
+// sqlite3:   sqlite://:@:/
 var databaseURL = process.env.DATABASE_URL          || 'sqlite://:@:/quiz';
 var databaseStorage  = process.env.DATABASE_STORAGE || 'quiz.sqlite';
 //                           1        2    3    4    5     6
@@ -15,6 +18,21 @@ var storage  = databaseStorage;  console.log("database storage: "+storage);
 
 // Cargar modelo ORM
 var Sequelize = require('sequelize');
+
+// Usar BBDD SQlite
+/*
+var sequelize = new Sequelize(DB_name, user, pwd, 
+        { 
+          dialect: dialect, 
+          protocol: protocol, 
+          port: port,
+          host: host,
+          storage: storage,
+          omitNull: true
+        }
+    );
+*/
+
 var sequelize = new Sequelize('sqlite://@:/', { storage: storage });
 
 // Importar la definición de la tabla Quiz en quiz.js
@@ -46,6 +64,3 @@ sequelize.sync().then(function(){
     }
   });
 });
-
-
-
