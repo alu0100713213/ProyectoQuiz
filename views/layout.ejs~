@@ -24,16 +24,7 @@
 	<h1><a href="/quizes/question">Juega ya</a></h1>
       </nav>
       <section class="main" id="s1">
-	<% if (errors, length) { %>
-		<span id='ErrorMsgs'>
-		Corregir erorres:<br/>
-		<% for (var i in errors) { %>
-		<span><%= errors[i].message %> </span><br/>
-		<% } %>
-	</span>
-	<% } %>
-		
-	<%- body %>
+			<%- body %>
       </section>
       <footer class="main" id="f1">
 			<br><br><br><br><br><br><br><br>
