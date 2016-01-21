@@ -1,4 +1,5 @@
 var Pregunta = require('../models/pregunta.js');
+var EJS = require('ejs');
 
 function SeleccionMultiple(x,array){
 	Pregunta.call(this);
