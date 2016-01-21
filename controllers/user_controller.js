@@ -1,4 +1,4 @@
-var users = {admin : {id:1, username:"admin", password:"nacho"}};
+var users = {admin : {id:1, username:"admin", password:"lakers"}};
 
 exports.autenticar = function(login, password, callback){
   if(users[login]){

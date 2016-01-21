@@ -1,12 +1,13 @@
 exports.loginRequired = function(req, res, next){
-	if(req.session.user){
-		next();
-	}
-	else{
-		res.redirect('/login');
-	}
-}
+  if(req.session.user){
+      next();
+  } else {
+      res.redirect('/login');
+  }
+};
 
+
+//GET /login --Formulario de login
 exports.new = function (req,res){
    var errors = req.session.errors || {};
    req.session.errors = {};
@@ -14,6 +15,7 @@ exports.new = function (req,res){
    res.render('sessions/new', {errors :errors});
 };
 
+//POST /login --Crear la sesion
 exports.create = function(req,res){
   var login = req.body.login;
   var password = req.body.password;
@@ -29,6 +31,7 @@ exports.create = function(req,res){
   });
 };
 
+//DELETE /logout --Destruir la session
 exports.destroy = function(req,res){
     delete req.session.user;
     res.redirect(req.session.redir.toString());
