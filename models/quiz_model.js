@@ -29,7 +29,12 @@ function Quiz() {
 
     { pregunta: new PreguntaSimple('¿Cual es el unico mamifero capaz de volar?', ['Murcielago','Zorro','Jirafa']),
       respuesta: new Respuesta('Murcielago')
+    },
+
+    { pregunta: new PreguntaMultiple('¿Las tres ultimas notas musicales?', ['Do','La','Si','Sol']),
+      respuesta: new Respuesta()
     }
+
   );
 }
 

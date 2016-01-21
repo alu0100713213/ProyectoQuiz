@@ -1,15 +1,16 @@
 var Pregunta = require('../models/pregunta.js');
 
+
 function SeleccionSimple(x, array){
 	Pregunta.call(this);
 	this.pregunta_ = x;
 	this.array_ = array;
 	
-	this.area = "<select name='respuesta[]'>";
+/**	this.area = "<select name='respuesta[]'>";
 	for(var i=0; i<array.length; i++){
 		this.area += "<option value='" + this.array_[i] + "'>" + this.array_[i] + "</option>";
 	}
-	this.area += "</select>";
+	this.area += "</select>";*/
 }
 
 SeleccionSimple.prototype = new Pregunta();
