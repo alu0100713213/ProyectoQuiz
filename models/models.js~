@@ -14,10 +14,5 @@ sequelize.sync().success(function(){
 	Quiz.count().success(function(count){
 	if(count === 0){
 		Quiz.create(
-		    { pregunta: "¿Qué cantidad de huesos tiene en total el ser humano?",
-      		      respuesta: "Seis"
-		     })
-		.success(function(){console.log("Base de datos correcta")});
-	};
-	 });
-});
+		    { pregunta: new PreguntaCorta('¿Qué cantidad de huesos tiene en total el ser humano?'),
+      		      respuesta: new Respuesta(/\s*206\s*$/i)
