@@ -10,7 +10,6 @@ var port=(url[5]||null);
 var host=(url[4]||null);
 var storage =process.env.DATABASE_STORAGE;
 
-
 //Cargar modelo ORM
 var Sequelize = require('sequelize');
 
@@ -34,7 +33,7 @@ exports.Quiz = Quiz; //exportar definición de la tabla Quiz (models/quiz.js)
 sequelize.sync().then(function() {
 	Quiz.count().then(function (count) {
 		if(count === 0) {
-			Quiz.create({pregunta: 'Capital de Italia',
+			Quiz.create({pregunta: 'Capital de Italia1',
 						respuesta: 'Roma'
 			});
 			Quiz.create({pregunta: 'Capital de Portugal',
