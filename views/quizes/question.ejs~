@@ -1,5 +1,0 @@
-<form action="/quizes/answer" method="get">
-  <%= pregunta %>
-  <input type="text" name="respuesta" value="" autofocus>
-  <input type="submit" value="enviar">
-</form>
