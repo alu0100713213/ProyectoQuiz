@@ -1,5 +1,21 @@
 var models = require('../models/models.js');
 
+//Autoload
+
+exports.load = function(req, res, next, commentId){
+	models.Comment.find({
+		where: {
+		   id: Number(commentId)
+		}
+	}).then(function(comment){
+	if(comment){
+		req.comment = comment;
+		next();
+	}else{next(new Error('No existe commentId=' + commentId))}
+	}
+	).catch(function(error){next(error)});
+};
+
 // GET quizez/:quizId/comments/new
 exports.new =function(req,res){
   res.render('comments/new.ejs', {quizid: req.params.quizId, errors: []});  
