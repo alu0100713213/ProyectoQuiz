@@ -32,7 +32,7 @@ function Quiz() {
     },
 
     { pregunta: new PreguntaMultiple('¿Las tres ultimas notas musicales?', ['Do','La','Si','Sol']),
-      respuesta: new Respuesta()
+      respuesta: new Respuesta(['La','Si','Sol'])
     }
 
   );

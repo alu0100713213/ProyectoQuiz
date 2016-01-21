@@ -4,11 +4,19 @@ function SeleccionMultiple(x,array){
 	Pregunta.call(this);
 	this.pregunta_ = x;
 	this.array_ = array;
+	this.area_;
+	var self=this;
+	
+	EJS.renderFile('views/quizes/pregunta_multiple.ejs',{array: this.array_}, function(err,html){
+	if(err) throw err;
+	else self.area_ = html;
+});
 }
 
 SeleccionMultiple.prototype = new Pregunta();
 SeleccionMultiple.prototype.constructor = SeleccionMultiple;
-SeleccionMultiple.prototype.vista = function (){
+
+/**SeleccionMultiple.prototype.vista = function (){
 	var vista = [];
 	for(var i=0; i<this.array_.length;i++){
 		vista[i] = "<option>" + this.array_[i] + "</option>";
@@ -19,7 +27,7 @@ SeleccionMultiple.prototype.vista = function (){
 
 	return vista;
 }
-
+*/
 SeleccionMultiple.prototype.get_pregunta = function(){
 	return this.pregunta_;
 }
