@@ -16,11 +16,13 @@
     <div id="page-wrap">
       	<header class="main" id="h1">
 		<center><img src="https://github.com/alu0100713213/ProyectoQuiz/blob/master/public/images/LogoQuiz.png?raw=true" alt="Logo" height="150" width="475"> </center>
+		<div id="login">
 		<%if(!session.user){%>
-		<span class="right"><a href="/login">Login</a></span>
+		<span class="right"><a href="/login">Iniciar sesión</a></span>
 		<%}else{%>
-		<span class="rigth"><%=session.user.username%><a href="/logout">Logout</a></span>
+		<span class="rigth">Bienvenido, <%=session.user.username%><a href="/logout">    Cerrar</a></span>
 		<%}%>	
+		</div>
 	</header>	
       <nav class="main" id="n1" role="navigation">
 

@@ -9,13 +9,14 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz', errors: [] }); 
 });
 
-router.param('quizId', quizController.load); //QUIZ 10
 
-// Definicion de rutas de sesión
+// Rutas para el login
 
-router.get('/login', sessionController.new);
-router.post('/login', sessionController.create);
-router.get('/logout', sessionController.destroy);
+router.param('quizId', quizController.load);
+
+router.get('/login',     sessionController.new);
+router.post('/login',    sessionController.create);
+router.get('/logout',    sessionController.destroy);
 
 //Definicion de rutas para las preguntas 
 

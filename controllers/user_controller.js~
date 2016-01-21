@@ -12,4 +12,4 @@ exports.autenticar = function(login, password, callback){
 	}
 	else{
 		callback(new Error('Usuario no existe'));}}
-};;
+};
