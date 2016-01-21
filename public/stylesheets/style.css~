@@ -21,8 +21,3 @@ a {
 #descripcion {
 	font-size: 16px;
 }
-
-nav span {
-	magin: 0px 10px 0px 0px;
-
-}
