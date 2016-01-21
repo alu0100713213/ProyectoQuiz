@@ -8,7 +8,7 @@ function Quiz() {
 
     { pregunta: '¿Qué cantidad de huesos tiene en total el ser humano?',
       respuesta: function(x) {
-        return (206).exec(x);
+        return (/\s*206\s*$/i).exec(x);
       }
     },
 

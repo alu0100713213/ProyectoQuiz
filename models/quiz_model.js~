@@ -8,7 +8,7 @@ function Quiz() {
 
     { pregunta: '¿Qué cantidad de huesos tiene en total el ser humano?',
       respuesta: function(x) {
-        return (206).exec(x);
+        return (/\s*206\s*$/i).exec(x);
       }
     },
 
@@ -21,6 +21,12 @@ function Quiz() {
     { pregunta: 'El triangulo que tiene sus tres lados igualees ¿Como se llama?',
       respuesta: function(x) {
         return (/\s*equilatero\s*$/i).exec(x);
+      }
+    },
+ 
+    { pregunta: '¿Quién es el padre del psicoanalisis?',
+      respuesta: function(x) {
+        return (/\s*sigmund freud\s*$/i).exec(x);
       }
     }
 
