@@ -1,41 +1,47 @@
 var path = require('path');
-var databaseURL = process.env.DATABASE_URL          || 'sqlite://:@:/quiz';
-var databaseStorage  = process.env.DATABASE_STORAGE || 'quiz.sqlite';
-var url = databaseURL.match(/(.*):\/\/(.*):(.*)@(.*):(.*)\/(.*)/);
-var DB_name  = (url[6] || null); console.log("DB_name: "+DB_name);
-var user     = (url[2] || null); console.log("database user: "+user);
-var pwd      = (url[3] || null); console.log("password: "+pwd);
 
-var protocol = (url[1] || null); console.log("protocol: "+protocol);
-var dialect  = protocol;         console.log("dialect: "+dialect);
-var port     = (url[5] || null); console.log("port: "+port);
-var host     = (url[4] || null); console.log("host: "+host);
-var storage  = databaseStorage;  console.log("database storage: "+storage);
+var url=process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
+var DB_name=(url[6]||null);
+var user=(url[2]||null);
+var pwd=(url[3]||null);
+var protocol=(url[1]||null);
+var dialect=(url[1]||null);
+var port=(url[5]||null);
+var host=(url[4]||null);
+var storage =process.env.DATABASE_STORAGE;
+
+
+//Cargar modelo ORM
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize('sqlite://@:/', { storage: storage });
 
-var quiz_path = path.join(__dirname, 'quiz');
-var Quiz = sequelize.import(quiz_path);
+//Usar BBDD SQLite
+var sequelize = new Sequelize(DB_name, user, pwd,
+		{dialect: protocol,
+		protocol: protocol,
+		port : port,
+		host: host,
+		storage: storage,
+		omitNull:true
+		}
+	);
 
-exports.Quiz = Quiz;
+//Importar la definición de la tabla Quiz en quiz.js
+var Quiz = sequelize.import(path.join(__dirname, 'quiz'));
 
-sequelize.sync().then(function(){
-  Quiz.count().then(function(count) {
-    if (count === 0) { 
-      Quiz.create({
-        pregunta: "Capital de Italia",
-        respuesta: "Roma"
-      });
-      Quiz.create({
-        pregunta: "Capital de España",
-        respuesta: "Madrid"
-      });
-      Quiz.create({
-        pregunta: "Capital de Portugal",
-        respuesta: "Lisboa"
-      }).then(function(){
-        console.log("Base de datos inicializada");
-      });
-    }
-  });
+exports.Quiz = Quiz; //exportar definición de la tabla Quiz (models/quiz.js)
+
+//sequelize.sync() crea e inicia tabla de preguntas en la base de datos
+sequelize.sync().then(function() {
+	Quiz.count().then(function (count) {
+		if(count === 0) {
+			Quiz.create({pregunta: 'Capital de Italia',
+						respuesta: 'Roma'
+			});
+			Quiz.create({pregunta: 'Capital de Portugal',
+						respuesta: 'Lisboa'
+			})
+			.then(function(){console.log('Base de datos inicializada')});
+		};
+	});
+
 });
