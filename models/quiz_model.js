@@ -25,8 +25,11 @@ function Quiz() {
  
     { pregunta: new PreguntaLarga('¿Quién es el padre del psiconalisis?'),
       respuesta: new Respuesta(/\s*sigmund freud\s*$/i)
-    }
+    }, 
 
+    { pregunta: new SeleccionSimple('¿Cual es el unico mamifero capaz de volar?', ['Murcielago','Zorro','Jirafa']),
+      respuesta: new Respuesta('Murcielago')
+    }
   );
 }
 
