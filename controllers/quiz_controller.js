@@ -16,13 +16,13 @@ exports.answer = function(req, res) {
 
 exports.questions = function(req,res) {
   var nPreg = quiz.numQuestions();
-  var cadena = "";
+  var array = new Array(nPreg);
 
   for(var i=0; i<nPreg; i++) {
-    cadena = cadena.concat("Pregunta " + (i+1) + ": " + quiz.getQ(i) + "<br><br>");
+    array[i] = (quiz.getQ(i));
   }
 
-  res.render('quizes/questions', {prg: cadena})
+  res.render('quizes/questions', {prg: array})
 };
 
 exports.specificQuestion = function(req, res) {
@@ -36,9 +36,8 @@ exports.specificQuestion = function(req, res) {
     res.render('quizes/SpecificQuestion', {prg: "Error en la URL."})
   }
   else {
-    id = id - 1;
-    var cadena = "Pregunta " + (id+1) + ": " + quiz.getQ(id);
+    current = quiz.q[id-1];
 
-    res.render('quizes/SpecificQuestion', {prg: cadena})
+    res.render('quizes/question', {pregunta: current.pregunta});
   }
 };
