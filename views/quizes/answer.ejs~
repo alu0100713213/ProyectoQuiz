@@ -1,4 +1,4 @@
-<center><h1><%= respuesta %></h1>
+<center><h1><%= respuesta %></h1></center>
 <p>
   <a href="/quizes/<%= quiz.id %>">Volver a la pregunta</a>
-</p></center>
+</p>
